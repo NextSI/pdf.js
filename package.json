@@ -12,6 +12,7 @@
     "@metalsmith/markdown": "^1.10.0",
     "@napi-rs/canvas": "^0.1.80",
     "@types/node": "^24.4.0",
+    "ajv": "^7.2.4",
     "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
     "caniuse-lite": "^1.0.30001741",

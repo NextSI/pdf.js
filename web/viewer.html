@@ -27,7 +27,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 <!--#if GENERIC || CHROME-->
     <meta name="google" content="notranslate">
 <!--#endif-->
-    <title>PDF.js viewer</title>
+    <title>Next BP PDF</title>
 
 <!--#if MOZCENTRAL-->
 <!--#include viewer-snippet-firefox-extension.html-->
@@ -245,7 +245,7 @@ See https://github.com/adobe-type-tools/cmap-resources
               </div>
               <div id="toolbarViewerRight" class="toolbarHorizontalGroup">
                 <div id="editorModeButtons" class="toolbarHorizontalGroup" role="radiogroup">
-                  <div id="editorComment" class="toolbarButtonWithContainer" hidden="true">
+                  <div id="editorComment" class="toolbarButtonWithContainer" hidden="true" style="display: none;">
                     <button id="editorCommentButton" class="toolbarButton" type="button" tabindex="0" disabled="disabled" role="radio" aria-expanded="false" aria-haspopup="true" aria-controls="editorCommentParamsToolbar" data-l10n-id="pdfjs-editor-comment-button">
                       <span data-l10n-id="pdfjs-editor-comment-button-label"></span>
                     </button>
@@ -266,7 +266,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                       </div>
                     </div>
                   </div>
-                  <div id="editorSignature" class="toolbarButtonWithContainer" hidden="true">
+                  <div id="editorSignature" class="toolbarButtonWithContainer" hidden="true" style="display: none;">
                     <button id="editorSignatureButton" class="toolbarButton" type="button" tabindex="0" disabled="disabled" role="radio" aria-expanded="false" aria-haspopup="true" aria-controls="editorSignatureParamsToolbar" data-l10n-id="pdfjs-editor-signature-button">
                       <span data-l10n-id="pdfjs-editor-signature-button-label"></span>
                     </button>
@@ -278,7 +278,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                       </div>
                     </div>
                   </div>
-                  <div id="editorHighlight" class="toolbarButtonWithContainer">
+                  <div id="editorHighlight" class="toolbarButtonWithContainer" style="display: none;">
                     <button id="editorHighlightButton" class="toolbarButton" type="button" disabled="disabled" role="radio" aria-expanded="false" aria-haspopup="true" aria-controls="editorHighlightParamsToolbar" tabindex="0" data-l10n-id="pdfjs-editor-highlight-button">
                       <span data-l10n-id="pdfjs-editor-highlight-button-label"></span>
                     </button>
@@ -303,7 +303,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                       </div>
                     </div>
                   </div>
-                  <div id="editorFreeText" class="toolbarButtonWithContainer">
+                  <div id="editorFreeText" class="toolbarButtonWithContainer" style="display: none;">
                     <button id="editorFreeTextButton" class="toolbarButton" type="button" disabled="disabled" role="radio" aria-expanded="false" aria-haspopup="true" aria-controls="editorFreeTextParamsToolbar" tabindex="0" data-l10n-id="pdfjs-editor-free-text-button">
                       <span data-l10n-id="pdfjs-editor-free-text-button-label"></span>
                     </button>
@@ -320,7 +320,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                       </div>
                     </div>
                   </div>
-                  <div id="editorInk" class="toolbarButtonWithContainer">
+                  <div id="editorInk" class="toolbarButtonWithContainer" style="display: none;">
                     <button id="editorInkButton" class="toolbarButton" type="button" disabled="disabled" role="radio" aria-expanded="false" aria-haspopup="true" aria-controls="editorInkParamsToolbar" tabindex="0" data-l10n-id="pdfjs-editor-ink-button">
                       <span data-l10n-id="pdfjs-editor-ink-button-label"></span>
                     </button>
@@ -341,7 +341,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                       </div>
                     </div>
                   </div>
-                  <div id="editorStamp" class="toolbarButtonWithContainer">
+                  <div id="editorStamp" class="toolbarButtonWithContainer" style="display: none;">
                     <button id="editorStampButton" class="toolbarButton" type="button" disabled="disabled" role="radio" aria-expanded="false" aria-haspopup="true" aria-controls="editorStampParamsToolbar" tabindex="0" data-l10n-id="pdfjs-editor-stamp-button">
                       <span data-l10n-id="pdfjs-editor-stamp-button-label"></span>
                     </button>
@@ -355,7 +355,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                   </div>
                 </div>
 
-                <div id="editorModeSeparator" class="verticalToolbarSeparator"></div>
+                <div id="editorModeSeparator" class="verticalToolbarSeparator" style="display: none;"></div>
 
                 <div class="toolbarHorizontalGroup hiddenMediumView">
                   <button id="printButton" class="toolbarButton" type="button" tabindex="0" data-l10n-id="pdfjs-print-button">
@@ -376,7 +376,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                   <div id="secondaryToolbar" class="hidden doorHangerRight menu">
                     <div id="secondaryToolbarButtonContainer" class="menuContainer">
 <!--#if GENERIC-->
-                      <button id="secondaryOpenFile" class="toolbarButton labeled" type="button" tabindex="0" data-l10n-id="pdfjs-open-file-button">
+                      <button id="secondaryOpenFile" class="toolbarButton labeled" type="button" tabindex="0" data-l10n-id="pdfjs-open-file-button" style="display: none;">
                         <span data-l10n-id="pdfjs-open-file-button-label"></span>
                       </button>
 <!--#endif-->
@@ -396,7 +396,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                       </div>
 
 <!--#if GENERIC-->
-                      <div class="horizontalToolbarSeparator"></div>
+                      <div class="horizontalToolbarSeparator" style="display: none;"></div>
 <!--#endif-->
 
                       <button id="presentationMode" class="toolbarButton labeled" type="button" tabindex="0" data-l10n-id="pdfjs-presentation-mode-button">
@@ -472,9 +472,9 @@ See https://github.com/adobe-type-tools/cmap-resources
                         <span data-l10n-id="pdfjs-image-alt-text-settings-button-label"></span>
                       </button>
 
-                      <div class="horizontalToolbarSeparator"></div>
+                      <div class="horizontalToolbarSeparator" style="display: none;"></div>
 
-                      <button id="documentProperties" class="toolbarButton labeled" type="button" tabindex="0" data-l10n-id="pdfjs-document-properties-button" aria-controls="documentPropertiesDialog">
+                      <button id="documentProperties" class="toolbarButton labeled" type="button" tabindex="0" data-l10n-id="pdfjs-document-properties-button" aria-controls="documentPropertiesDialog" style="display: none;">
                         <span data-l10n-id="pdfjs-document-properties-button-label"></span>
                       </button>
                     </div>

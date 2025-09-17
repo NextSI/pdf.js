@@ -781,6 +781,12 @@ const PDFViewerApplication = {
       } catch {
         file = encodeURIComponent(file).replaceAll("%2F", "/");
       }
+      const downloadButton = document.getElementById("downloadButton");
+      const secondaryDownload = document.getElementById("secondaryDownload");
+      const printButton = document.getElementById("printButton");
+      const secondaryPrint = document.getElementById("secondaryPrint");
+      downloadButton.style.display = secondaryDownload.style.display = printButton.style.display = secondaryPrint.style.display = params.get("download") === "true" ? "" : "none";
+
       validateFileURL(file);
     } else if (PDFJSDev.test("MOZCENTRAL")) {
       file = window.location.href;
@@ -2400,16 +2406,39 @@ if (typeof PDFJSDev === "undefined" || !PDFJSDev.test("MOZCENTRAL")) {
 if (typeof PDFJSDev === "undefined" || PDFJSDev.test("GENERIC")) {
   const HOSTED_VIEWER_ORIGINS = new Set([
     "null",
-    "http://mozilla.github.io",
-    "https://mozilla.github.io",
+    "http://localhost:*",
+    "https://localhost:*",
+    "http://127.0.0.1:*",
+    "https://127.0.0.1:*"
   ]);
+  var siteValido = function (sites, palavra) {
+    return [...sites].some(pattern => {
+      // Se não há asterisco, compara diretamente
+      if (!pattern.includes('*')) {
+        return pattern === palavra;
+      }
+      
+      // Converte o pattern com asterisco em regex
+      // Escapa caracteres especiais de regex, exceto o asterisco
+      const escapedPattern = pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&');
+      
+      // Substitui asterisco por regex que captura qualquer coisa
+      const regexPattern = escapedPattern.replace(/\*/g, '.*');
+      
+      // Cria regex que deve corresponder à string inteira
+      const regex = new RegExp(`^${regexPattern}$`);
+      
+      return regex.test(palavra);
+    });
+  }
+
   // eslint-disable-next-line no-var
   var validateFileURL = function (file) {
     if (!file) {
       return;
     }
     const viewerOrigin = URL.parse(window.location)?.origin || "null";
-    if (HOSTED_VIEWER_ORIGINS.has(viewerOrigin)) {
+    if (siteValido(HOSTED_VIEWER_ORIGINS, viewerOrigin)) {
       // Hosted or local viewer, allow for any file locations
       return;
     }
